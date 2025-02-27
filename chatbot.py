@@ -41,6 +41,6 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user", avatar="🧑").write(prompt)
     st.session_state["fullMessage"] = ""
-    st.chat_message("bot", avatar="🤖").write_stream(bot_response())
+    st.chat_message("assistant", avatar="🤖").write_stream(bot_response())
     st.session_state.messages.append({"role": "assistant", "content": st.session_state["fullMessage"]})
 
