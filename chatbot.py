@@ -1,7 +1,6 @@
 import streamlit as st
 from together import Together
 
-# Initialize Together.AI client with API key
 TOGETHER_API_KEY = "4f58a8dd2e7dbe7a36afe068ed9442666316094bf80e9292f2cf759c375cd890"
 client = Together(api_key=TOGETHER_API_KEY)
 
@@ -39,6 +38,7 @@ def bot_response():
         model="mistralai/Mistral-7B-Instruct-v0.2",
         messages=st.session_state.messages
     )
+    
     return response.choices[0].message.content
 
 if prompt := st.chat_input():
